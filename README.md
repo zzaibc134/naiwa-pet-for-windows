@@ -1,58 +1,58 @@
-# 桌宠 / Desktop Pet
+桌宠 / Desktop Pet
 
 一个 Windows 桌面宠物：点击它播放捧腹大笑动画和笑声，可拖动、可隐藏、
 可调节大小、可开机自启，系统托盘常驻。
 
-**技术栈**：Python + PySide6（透明置顶窗口、序列帧动画、QSoundEffect 音效）
-**素材管线**：白底录屏视频 → ffmpeg 抠像 → 自动去白边/去地面阴影 → WebP 序列帧
+技术栈：Python + PySide6（透明置顶窗口、序列帧动画、QSoundEffect 音效）
+素材管线：白底录屏视频 → ffmpeg 抠像 → 自动去白边/去地面阴影 → WebP 序列帧
 
-**仓库地址**：https://github.com/zzaibc134/naiwa-pet-for-windows
+仓库地址：https://github.com/zzaibc134/naiwa-pet-for-windows
 
-## 🔽 两种装法
+两种装法
 
-**方式一：免安装版（不用装 Python，推荐给朋友）**
+方式一：免安装版（不用装 Python）
 
-👉 **[下载 v1.0.0 Release](https://github.com/zzaibc134/naiwa-pet-for-windows/releases/latest)**
-→ 解压 → 双击 `奶娃桌宠.exe`
+👉 [下载 v1.0.0 Release](https://github.com/zzaibc134/naiwa-pet-for-windows/releases/latest)
+→ 解压 → 双击 奶娃桌宠.exe
 （首次运行若提示"已保护你的电脑"，点 更多信息 → 仍要运行）
 
-**方式二：从源码跑（需要 Python 3.10+）**
+方式二：从源码跑（需要 Python 3.10+）
 
-```bat
+bat
 git clone https://github.com/zzaibc134/naiwa-pet-for-windows.git
 cd naiwa-pet-for-windows
 pip install -r requirements.txt
 python src/main.py
-```
 
----
 
-## ⚠️ 版权说明（必读）
 
-- 本仓库**代码**采用 MIT 许可证。
-- `assets/` 里的角色形象、动画、笑声、语音是**第三方作品（奶龙/奶娃）**，
-  本仓库未获授权。这是仓库主人的明确决定：**仅供个人学习与朋友间玩耍，
-  无授权商用**；如版权方提出，仓库会立即移除相关素材。
-- 你下载后同样只建议自用。若你要公开传播或二次分发，请先把素材拿掉：
-  `.gitignore` 里恢复 `assets/pet/*`、`assets/raw/` 两行排除，
-  或让使用者改跑 `python tools/make_placeholder.py` 生成**原创占位角色**。
-- 换你自己的角色：往下看「素材 SOP」，一段白底视频就能整套重做。
 
----
+⚠️ 版权说明（必读）
 
-## 三分钟跑起来
+  本仓库代码采用 MIT 许可证。
+  assets/ 里的角色形象、动画、笑声、语音是第三方作品（奶娃），
+  本仓库未获授权。这是仓库主人的明确决定：仅供个人学习与朋友间玩耍，
+  无授权商用；如版权方提出，仓库会立即移除相关素材。
+  你下载后同样只建议自用。若你要公开传播或二次分发，请先把素材拿掉：
+  .gitignore 里恢复 assets/pet/*、assets/raw/ 两行排除，
+  或让使用者改跑 python tools/make_placeholder.py 生成原创占位角色。
+  换你自己的角色：往下看「素材 SOP」，一段白底视频就能整套重做。
 
-```bash
+
+
+三分钟跑起来
+
+bash
 pip install -r requirements.txt
 python src/main.py        # 素材就在仓库里，clone 完直接跑
-```
 
-**不会命令行？** 装好 [Python](https://www.python.org/downloads/)
-（勾选 "Add python.exe to PATH"）后双击 `快速开始.bat`。
 
-### 让 AI 助手替你装（最省事）
+如果不会命令行-> 装好 [Python](https://www.python.org/downloads/)
+（勾选 "Add python.exe to PATH"）后双击 快速开始.bat。
 
-把下面这段话**原样复制**给你电脑上的豆包 / ChatGPT / Claude 等 AI，
+或者让 AI 助手替你装（最省事）
+
+把下面这段话原样复制给你电脑上的豆包 /codex/deepseek harness/Zcode 等 AI工具，
 地址已经填好了：
 
 > 帮我在这台 Windows 电脑上把桌宠跑起来，全程自己执行并修错：
@@ -69,11 +69,11 @@ python src/main.py        # 素材就在仓库里，clone 完直接跑
 ![演示](docs/demo.gif)
 
 想换成自己的角色（或把仓库变成"纯代码"模式）：
-`python tools/make_placeholder.py --force` 生成原创占位角色「蛋蛋」顶替素材。
+`python tools/make_placeholder.py --force` 生成原创占位角色顶替素材。
 
 ---
 
-## 常见问题
+常见问题
 
 | 症状 | 原因 / 解决 |
 |---|---|
@@ -87,18 +87,18 @@ python src/main.py        # 素材就在仓库里，clone 完直接跑
 
 ---
 
-## 功能
+功能
 
 | 操作 | 效果 |
 |---|---|
 | 左键单击 | 播放捧腹大笑动作 + 笑声（播放中再点会重播） |
 | 左键拖动 | 把桌宠拖到任意位置 |
-| 右键菜单 | 大小（小/标准/大）、**静止（不上下浮动）**、**音频（三句语音）**、静音、开机自启、隐藏、回到右下角、退出 |
+| 右键菜单 | 大小（小/标准/大）、静止（不上下浮动）、音频（三句语音）、静音、开机自启、隐藏、回到右下角、退出 |
 | 音频 | 点一句就让桌宠边说边动嘴：口型按音频能量逐帧驱动，说完自动闭嘴 |
 | 托盘图标 | 左键点托盘 = 显示/隐藏；右键托盘 = 菜单 |
 | 全局快捷键 | `Alt + Shift + H` 隐藏/显示桌宠 |
 | 待机 | 缓慢上下浮动（亚像素，不会一顿一顿）+ 随机眨眼（2.2~6 秒一次，15% 连眨两下） |
-| 静止 | 勾上后**停止上下浮动**（眨眼、语音、点击大笑照常），状态记进设置，重启仍生效 |
+| 静止 | 勾上后 "停止上下浮动"（眨眼、语音、点击大笑照常），状态记进设置，重启仍生效 |
 | 其他 | 透明区域鼠标穿透、不抢焦点、始终置顶、位置和设置自动记忆 |
 
 > 「静止」不是"暂停当前动作"，而是一个独立的常驻状态：勾上后浮动增益渐降到 0
@@ -107,7 +107,7 @@ python src/main.py        # 素材就在仓库里，clone 完直接跑
 
 ---
 
-## 一、直接运行（开发者）
+一、直接运行（开发者）
 
 需要 Python 3.10+（建议 3.11 或 3.12）和 ffmpeg。
 
@@ -119,7 +119,7 @@ python src/main.py
 
 ---
 
-## 二、素材处理（视频 → 序列帧）
+ 二、素材处理（视频 → 序列帧）
 
 素材准备要求：
 
@@ -180,7 +180,7 @@ python tools/make_blink.py        # 从 idle.webp 生成眨眼帧（可选）
 脚本自动完成：抠白 → 去白边 → 去地面阴影（含脚底暖色阴影块）→ 浅色区域保护
 → 椭圆核内缩 → alpha 羽化 → 透明区颜色外扩 → 预乘缩放 → WebP。
 
-### 边缘质量的四个关键点（踩过的坑）
+边缘质量的四个关键点
 
 1. **腐蚀必须用椭圆核**。PIL 的 `MinFilter` 是方形结构元，对曲线轮廓腐蚀会啃出
    一格一格的方角缺口，就是那种"割裂纹"。实测折角密度从每 1000 像素周长 11.2 个
@@ -198,7 +198,7 @@ python tools/make_blink.py        # 从 idle.webp 生成眨眼帧（可选）
 （往返后 alpha 差异 0 像素），不需要为 alpha 单独调参数；边缘损伤全部来自
 RGB 色度。
 
-### 最危险的一个坑：肚皮被抠穿
+ 最危险的一个坑：桌宠皮肤被穿透
 
 `--similarity` / `--blend` 调大以后，**浅色角色会被自己抠穿**：奶油肚皮和白色
 背景本来就分不太开，抠像一松，肚皮就成了透明；再去擦地面阴影的泛洪会顺着
@@ -259,7 +259,7 @@ python tools/scan_holes.py            # 退出码非 0 = 存在疑似被抠穿�
 
 ---
 
-## 三、打包成 Windows exe（发给朋友）
+## 三、打包成 Windows exe
 
 **在 Windows 电脑上操作**（PyInstaller 不能跨平台打包）：
 
