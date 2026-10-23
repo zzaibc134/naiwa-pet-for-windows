@@ -1,0 +1,19 @@
+# 角色素材（形象/动画/音效/语音）随仓库分发 —— 仓库主人的明确决定，
+# 仅限个人学习与朋友间玩耍；无授权商用，风险自负（见 README 版权说明）。
+# 如需一键把仓库变成"纯代码可安全开源"模式：git rm -r --cached assets && 恢复本节
+
+# PyInstaller 打包产物
+build/
+dist/
+*.spec
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# 本机产物：快捷方式里带个人绝对路径，preview.png 是过程截图
+启动桌宠.lnk
+preview.png
+*.log

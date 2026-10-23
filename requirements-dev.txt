@@ -1,0 +1,5 @@
+# Only needed when building assets from your own video
+# (process_assets / make_blink / make_talk use OpenCV).
+# To just run the pet: install requirements.txt only.
+-r requirements.txt
+opencv-python-headless>=4.5

@@ -1,0 +1,15 @@
+# 统一行尾，避免 Windows/Linux 协作时整文件 diff
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.bat text eol=crlf
+*.json text eol=lf
+
+# 二进制文件不做任何转换
+*.webp binary
+*.png binary
+*.gif binary
+*.ico binary
+*.wav binary
+*.mp4 binary
+*.lnk binary
