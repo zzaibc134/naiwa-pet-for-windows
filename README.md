@@ -8,6 +8,16 @@
 
 **仓库地址**：https://github.com/zzaibc134/naiwa-pet-for-windows
 
+## 🔽 两种装法
+
+**方式一：免安装版（不用装 Python，推荐给朋友）**
+
+👉 **[下载 v1.0.0 Release](https://github.com/zzaibc134/naiwa-pet-for-windows/releases/latest)**
+→ 解压 → 双击 `奶娃桌宠.exe`
+（首次运行若提示"已保护你的电脑"，点 更多信息 → 仍要运行）
+
+**方式二：从源码跑（需要 Python 3.10+）**
+
 ```bat
 git clone https://github.com/zzaibc134/naiwa-pet-for-windows.git
 cd naiwa-pet-for-windows
