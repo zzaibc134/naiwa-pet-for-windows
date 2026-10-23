@@ -6,6 +6,15 @@
 **技术栈**：Python + PySide6（透明置顶窗口、序列帧动画、QSoundEffect 音效）
 **素材管线**：白底录屏视频 → ffmpeg 抠像 → 自动去白边/去地面阴影 → WebP 序列帧
 
+**仓库地址**：https://github.com/zzaibc134/naiwa-pet-for-windows
+
+```bat
+git clone https://github.com/zzaibc134/naiwa-pet-for-windows.git
+cd naiwa-pet-for-windows
+pip install -r requirements.txt
+python src/main.py
+```
+
 ---
 
 ## ⚠️ 版权说明（必读）
@@ -34,10 +43,11 @@ python src/main.py        # 素材就在仓库里，clone 完直接跑
 ### 让 AI 助手替你装（最省事）
 
 把下面这段话**原样复制**给你电脑上的豆包 / ChatGPT / Claude 等 AI，
-并把 `<仓库地址>` 换成本仓库的 URL：
+地址已经填好了：
 
 > 帮我在这台 Windows 电脑上把桌宠跑起来，全程自己执行并修错：
-> 1. `git clone <仓库地址>`（git 不通就下载 `<仓库地址>/archive/refs/heads/main.zip` 解压）
+> 1. `git clone https://github.com/zzaibc134/naiwa-pet-for-windows.git`
+>    （git 不通就下载 https://github.com/zzaibc134/naiwa-pet-for-windows/archive/refs/heads/main.zip 解压）
 > 2. 没有 Python 就先装 3.10+（https://www.python.org/downloads/ ，勾选 Add to PATH）
 > 3. 项目目录里执行 `python -m venv .venv`
 > 4. `.venv\Scripts\python -m pip install -r requirements.txt`
@@ -50,6 +60,20 @@ python src/main.py        # 素材就在仓库里，clone 完直接跑
 
 想换成自己的角色（或把仓库变成"纯代码"模式）：
 `python tools/make_placeholder.py --force` 生成原创占位角色「蛋蛋」顶替素材。
+
+---
+
+## 常见问题
+
+| 症状 | 原因 / 解决 |
+|---|---|
+| `快速开始.bat` 双击一闪而过 | 在文件夹空白处右键 →「在终端中打开」→ 输入 `快速开始.bat`，就能看到真正的报错 |
+| `pip install` 卡住或超时 | 换国内镜像：`pip install -r requirements.txt -i https://pypi.mirrors.ustc.edu.cn/simple/` |
+| `git clone` 卡住 / 连不上 | 开加速器，或浏览器直接下 ZIP：仓库页 `Code` →`Download ZIP` |
+| 桌面上出现的是**蓝色小蛋**，不是奶娃 | 素材被占位角色顶替了。在项目目录执行 `git checkout -- assets` 恢复 |
+| 桌宠不见了 / 想临时藏起来 | 托盘图标左键切换，或按 `Alt + Shift + H`；右键菜单里还有「回到右下角」 |
+| 点击有动作但没声音 | 右键菜单看「静音」是否被勾上；再看系统音量混音器里本程序的音量 |
+| 想让它别上下浮动 | 右键 →「静止（不上下浮动）」，设置会记住，下次启动仍生效 |
 
 ---
 
